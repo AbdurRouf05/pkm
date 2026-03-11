@@ -53,14 +53,14 @@ export const SlideWrapper: React.FC<SlideWrapperProps> = ({
           animate="active"
           exit="exit"
           className={cn(
-            "fixed inset-0 flex flex-col items-center justify-center p-6 md:p-12 overflow-hidden",
+            "fixed inset-0 flex flex-col items-center justify-start md:justify-center p-4 md:p-12 overflow-y-auto overflow-x-hidden",
             "bg-slate-900 text-white",
             className
           )}
         >
           <StarBackground />
           <div className="absolute inset-0 bg-[radial-gradient(#ffffff08_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
-          <div className="w-full max-w-6xl mx-auto h-full flex flex-col justify-center relative z-10">
+          <div className="w-full max-w-6xl mx-auto min-h-full flex flex-col justify-center relative z-10 py-8 md:py-0">
             {children}
           </div>
         </motion.div>

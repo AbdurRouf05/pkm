@@ -13,27 +13,27 @@ interface SlideProps {
 export const Slide2: React.FC<SlideProps> = ({ isActive = false, direction = 0 }) => {
   return (
     <SlideWrapper isActive={isActive} direction={direction}>
-      <div className="space-y-8 w-full">
+      <div className="space-y-6 md:space-y-8 w-full">
         <div className="text-center">
-          <h2 className="text-3xl md:text-5xl font-extrabold text-white uppercase tracking-tight">SaaS vs ERP</h2>
-          <p className="text-lg text-slate-400 mt-1 uppercase tracking-widest font-bold">The Foundation of KalibraOS</p>
+          <h2 className="text-2xl md:text-4xl font-extrabold text-white uppercase tracking-tight">SaaS vs ERP</h2>
+          <p className="text-base text-slate-400 mt-1 uppercase tracking-widest font-bold">The Foundation of KalibraOS</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 pb-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 pb-2">
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
-            className="p-8 rounded-[2.5rem] bg-slate-900/40 border border-white/10 hover:border-primary/40 transition-all backdrop-blur-3xl relative overflow-hidden group"
+            className="p-5 md:p-6 rounded-3xl md:rounded-[2rem] bg-slate-900/40 border border-white/10 hover:border-primary/40 transition-all backdrop-blur-3xl relative overflow-hidden group"
           >
             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-5 group-hover:opacity-10 transition-opacity" />
             <div className="relative z-10 text-center flex flex-col items-center">
-              <div className="w-14 h-14 bg-primary/20 rounded-2xl flex items-center justify-center mb-4">
-                <Layers className="text-primary w-7 h-7" />
+              <div className="w-10 h-10 md:w-12 md:h-12 bg-primary/20 rounded-xl md:rounded-2xl flex items-center justify-center mb-3 leading-none">
+                <Layers className="text-primary w-5 h-5 md:w-6 md:h-6" />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-2 uppercase tracking-tighter">ERP</h3>
-              <p className="text-slate-400 text-sm mb-3 italic">"The Integrated System"</p>
-              <p className="text-slate-200 text-base leading-relaxed font-medium">Software terintegrasi untuk mengelola seluruh aspek bisnis dalam satu platform.</p>
+              <h3 className="text-lg md:text-xl font-bold text-white mb-1 uppercase tracking-tighter">ERP</h3>
+              <p className="text-slate-400 text-[10px] md:text-xs mb-2 italic">"The Integrated System"</p>
+              <p className="text-slate-200 text-xs md:text-sm leading-relaxed font-medium">Software terintegrasi untuk mengelola seluruh aspek bisnis dalam satu platform.</p>
             </div>
           </motion.div>
 
@@ -41,16 +41,16 @@ export const Slide2: React.FC<SlideProps> = ({ isActive = false, direction = 0 }
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5 }}
-            className="p-8 rounded-[2.5rem] bg-slate-900/40 border border-white/10 hover:border-secondary/40 transition-all backdrop-blur-3xl relative overflow-hidden group"
+            className="p-5 md:p-6 rounded-3xl md:rounded-[2rem] bg-slate-900/40 border border-white/10 hover:border-secondary/40 transition-all backdrop-blur-3xl relative overflow-hidden group"
           >
             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-5 group-hover:opacity-10 transition-opacity" />
             <div className="relative z-10 text-center flex flex-col items-center">
-              <div className="w-14 h-14 bg-secondary/20 rounded-2xl flex items-center justify-center mb-4">
-                <Cloud className="text-secondary w-7 h-7" />
+              <div className="w-10 h-10 md:w-12 md:h-12 bg-secondary/20 rounded-xl md:rounded-2xl flex items-center justify-center mb-3 leading-none">
+                <Cloud className="text-secondary w-5 h-5 md:w-6 md:h-6" />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-2 uppercase tracking-tighter">SaaS</h3>
-              <p className="text-slate-400 text-sm mb-3 italic">"Cloud Access Model"</p>
-              <p className="text-slate-200 text-base leading-relaxed font-medium">Akses software via browser tanpa server fisik. Cukup berlangganan & siap pakai.</p>
+              <h3 className="text-lg md:text-xl font-bold text-white mb-1 uppercase tracking-tighter">SaaS</h3>
+              <p className="text-slate-400 text-[10px] md:text-xs mb-2 italic">"Cloud Access Model"</p>
+              <p className="text-slate-200 text-xs md:text-sm leading-relaxed font-medium">Akses software via browser tanpa server fisik. Cukup berlangganan & siap pakai.</p>
             </div>
           </motion.div>
         </div>
@@ -59,13 +59,13 @@ export const Slide2: React.FC<SlideProps> = ({ isActive = false, direction = 0 }
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7 }}
-          className="p-8 rounded-[3rem] bg-gradient-to-r from-primary/30 to-blue-600/30 border border-white/10 text-white text-center backdrop-blur-3xl relative overflow-hidden shadow-2xl"
+          className="p-5 md:p-6 rounded-3xl md:rounded-[2.5rem] bg-gradient-to-r from-primary/30 to-blue-600/30 border border-white/10 text-white text-center backdrop-blur-3xl relative overflow-hidden shadow-2xl"
         >
-          <div className="absolute top-0 right-0 p-4 opacity-5">
-            <Server size={100} />
+          <div className="absolute top-0 right-0 p-4 opacity-5 hidden md:block text-white">
+            <Server size={80} />
           </div>
-          <h3 className="text-2xl font-black mb-1 uppercase">Mengenal KalibraOS</h3>
-          <p className="text-lg font-medium text-slate-100 max-w-3xl mx-auto italic">
+          <h3 className="text-lg md:text-xl font-black mb-1 uppercase tracking-tighter">Mengenal KalibraOS</h3>
+          <p className="text-sm md:text-base font-medium text-slate-100 max-w-2xl mx-auto italic leading-relaxed">
             "Sistem manajemen bisnis terintegrasi yang disajikan secara layanan perangkat lunak modern untuk efisiensi UMKM F&B."
           </p>
         </motion.div>

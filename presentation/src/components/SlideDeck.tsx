@@ -50,25 +50,25 @@ export const SlideDeck: React.FC<SlideDeckProps> = ({ slides }) => {
       ))}
 
       {/* Navigation Controls */}
-      <div className="fixed bottom-8 right-8 flex gap-4 z-50">
+      <div className="fixed bottom-6 right-6 md:bottom-8 md:right-8 flex gap-2 md:gap-4 z-50">
         <button
           onClick={goToPrevSlide}
           disabled={currentSlide === 0}
-          className="p-3 rounded-full bg-white/50 backdrop-blur-md shadow-lg hover:bg-white transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+          className="p-2 md:p-3 rounded-full bg-white/20 backdrop-blur-xl border border-white/10 shadow-lg hover:bg-white/30 transition-all active:scale-95 disabled:opacity-20 disabled:cursor-not-allowed"
           aria-label="Previous slide"
         >
-          <ChevronLeft className="w-6 h-6 text-primary" />
+          <ChevronLeft className="w-5 h-5 md:w-6 md:h-6 text-white" />
         </button>
-        <div className="flex items-center justify-center px-4 py-2 bg-white/50 backdrop-blur-md rounded-full shadow-lg font-medium text-sm">
+        <div className="flex items-center justify-center px-4 py-2 bg-white/20 backdrop-blur-xl border border-white/10 rounded-full shadow-lg font-bold text-xs md:text-sm text-white">
           {currentSlide + 1} / {slides.length}
         </div>
         <button
           onClick={goToNextSlide}
           disabled={currentSlide === slides.length - 1}
-          className="p-3 rounded-full bg-white/50 backdrop-blur-md shadow-lg hover:bg-white transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+          className="p-2 md:p-3 rounded-full bg-white/20 backdrop-blur-xl border border-white/10 shadow-lg hover:bg-white/30 transition-all active:scale-95 disabled:opacity-20 disabled:cursor-not-allowed"
           aria-label="Next slide"
         >
-          <ChevronRight className="w-6 h-6 text-primary" />
+          <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-white" />
         </button>
       </div>
 

@@ -12,54 +12,54 @@ interface SlideProps {
 export const Slide1: React.FC<SlideProps> = ({ isActive = false, direction = 0 }) => {
   return (
     <SlideWrapper isActive={isActive} direction={direction} className="text-white">
-      <motion.div 
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-        className="w-full max-w-5xl mx-auto p-8 md:p-12 rounded-[3.5rem] bg-slate-900/40 border border-white/10 backdrop-blur-3xl relative overflow-hidden text-center space-y-6 shadow-2xl"
-      >
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10 pointer-events-none" />
-        
+      <div className="w-full max-w-4xl mx-auto flex flex-col items-center justify-center text-center space-y-6 md:space-y-10 py-6 md:py-10">
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="inline-block px-4 py-1.5 rounded-full bg-primary/20 text-primary-foreground font-semibold text-xs tracking-wide uppercase relative z-10"
+          className="inline-block px-3 py-1.5 rounded-full bg-primary/20 text-primary-foreground font-bold text-[10px] md:text-xs tracking-[0.2em] md:tracking-[0.4em] uppercase relative z-10 border border-primary/20 backdrop-blur-sm"
         >
-          PKM-K Presentation
+          PKM-K Presentation 2026
         </motion.div>
         
-        <div className="relative z-10 space-y-4">
+        <div className="relative z-10 space-y-6 md:space-y-8">
           <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-2xl md:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight uppercase font-sans drop-shadow-2xl px-4"
+            className="text-xl md:text-5xl lg:text-5xl font-black text-white tracking-tight leading-[1.15] uppercase drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)] px-4"
           >
             INOVASI SAAS-ERP TERINTEGRASI: <br />
-            <span className="text-primary italic text-[0.85em]">Platform Manajemen Stok & Akuntansi Otomatis</span> <br />
-            <span className="text-[0.7em] block mt-2 opacity-90">Solusi Efisiensi Bisnis FNB</span>
+            <span className="text-primary italic">Manajemen Stok & Akuntansi Otomatis</span> <br />
+            <span className="text-[0.45em] md:text-[0.55em] block mt-4 opacity-80 tracking-widest font-bold">Solusi Efisiensi Operasional UMKM F&B</span>
           </motion.h1>
           
+          <motion.div
+            initial={{ width: 0 }}
+            animate={{ width: "120px" }}
+            transition={{ duration: 1, delay: 0.8 }}
+            className="h-1 bg-primary mx-auto rounded-full shadow-[0_0_20px_rgba(var(--primary),0.5)]"
+          />
+
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-lg md:text-xl text-slate-200 max-w-4xl mx-auto leading-relaxed font-medium"
+            className="text-base md:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed font-semibold italic drop-shadow-lg"
           >
-            Manajemen Stok Berbasis Recipe-Intelligence Usaha Mikro Kecil dan Menengah
+            Software as a Service-Enterprise Resource Planning Terintegrasi
           </motion.p>
           
           <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.8 }}
-            className="pt-6 space-y-1"
+            transition={{ duration: 1, delay: 1 }}
+            className="pt-6 md:pt-10"
           >
-            <p className="text-base font-bold text-white uppercase tracking-widest opacity-80">ITB Widyagama Lumajang</p>
-            <div className="w-12 h-1 bg-primary mx-auto rounded-full" />
+            <p className="text-sm md:text-lg font-black text-white uppercase tracking-[0.4em] opacity-60">ITB Widyagama Lumajang</p>
           </motion.div>
         </div>
-      </motion.div>
+      </div>
     </SlideWrapper>
   );
 };
