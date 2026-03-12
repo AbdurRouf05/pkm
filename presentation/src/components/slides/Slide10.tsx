@@ -3,7 +3,7 @@
 import React from 'react';
 import { SlideWrapper } from '../SlideWrapper';
 import { motion } from 'framer-motion';
-import { Wallet, Cloud, ShieldCheck, Cpu, Layout } from 'lucide-react';
+import { Heart } from 'lucide-react';
 
 interface SlideProps {
   isActive?: boolean;
@@ -11,87 +11,54 @@ interface SlideProps {
 }
 
 export const Slide10: React.FC<SlideProps> = ({ isActive = false, direction = 0 }) => {
-  const budgetItems = [
-    { 
-      no: 1, 
-      item: 'Infrastruktur Cloud', 
-      amount: 'Rp 3.500.000', 
-      desc: 'Supabase Pro, Vercel Pro, & Storage',
-      icon: <Cloud className="w-4 h-4 text-blue-400" />
-    },
-    { 
-      no: 2, 
-      item: 'Lisensi & Domain', 
-      amount: 'Rp 1.500.000', 
-      desc: 'Domain .id, SSL, Workspace Email',
-      icon: <ShieldCheck className="w-4 h-4 text-emerald-400" />
-    },
-    { 
-      no: 3, 
-      item: 'API & Generative AI', 
-      amount: 'Rp 1.500.000', 
-      desc: 'Gemini API, Genkit, Image API',
-      icon: <Cpu className="w-4 h-4 text-purple-400" />
-    },
-    { 
-      no: 4, 
-      item: 'Marketing Digital', 
-      amount: 'Rp 1.500.000', 
-      desc: 'Meta Ads, Google Ads, Publikasi',
-      icon: <Layout className="w-4 h-4 text-orange-400" />
-    },
-  ];
-
   return (
-    <SlideWrapper isActive={isActive} direction={direction}>
-      <div className="space-y-4 md:space-y-6 w-full max-w-5xl mx-auto">
-        <div className="flex items-center gap-3 md:gap-4 pb-1 md:pb-2">
-           <div className="p-2 md:p-3 rounded-xl bg-primary text-white shadow-xl shadow-primary/40 leading-none">
-              <Wallet className="w-5 h-5 md:w-7 md:h-7" />
-           </div>
-           <h2 className="text-2xl md:text-3xl font-black text-white leading-tight uppercase tracking-tighter">Anggaran Biaya Program</h2>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="space-y-3">
-            {budgetItems.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ x: -20, opacity: 0 }}
-                animate={isActive ? { x: 0, opacity: 1 } : {}}
-                transition={{ delay: 0.1 * index }}
-                className="p-3 md:p-4 rounded-2xl bg-slate-900/60 border border-white/10 backdrop-blur-xl flex items-center gap-4 group hover:border-primary/50 transition-colors"
-              >
-                <div className="p-2 rounded-lg bg-white/5 group-hover:bg-primary/20 transition-colors">
-                  {item.icon}
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-xs md:text-sm font-bold text-white uppercase tracking-tight">{item.item}</h3>
-                  <p className="text-[10px] md:text-xs text-slate-400">{item.desc}</p>
-                </div>
-                <div className="text-right">
-                  <p className="text-sm md:text-base font-black text-primary italic leading-none">{item.amount}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+    <SlideWrapper isActive={isActive} direction={direction} className="text-white overflow-hidden">
+      <div className="w-full max-w-3xl mx-auto p-4 md:p-8 rounded-3xl md:rounded-[2.5rem] bg-slate-900/40 border border-white/10 backdrop-blur-3xl relative overflow-hidden text-center space-y-6 md:space-y-8 shadow-2xl leading-none">
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10 pointer-events-none" />
+        
+        <div className="relative z-10 space-y-6 md:space-y-8">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="space-y-2 md:space-y-4 leading-normal"
+          >
+            <h2 className="text-3xl md:text-5xl font-black tracking-tighter uppercase italic drop-shadow-2xl leading-tight">
+              Thank <span className="text-primary font-black">You</span>
+            </h2>
+            <div className="w-12 md:w-16 h-1 md:h-1.5 bg-primary mx-auto rounded-full" />
+            <p className="text-sm md:text-lg text-slate-300 font-medium px-2">Ready to scale your F&B business with KalibraOS?</p>
+          </motion.div>
 
           <motion.div 
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={isActive ? { scale: 1, opacity: 1 } : {}}
-            transition={{ delay: 0.5 }}
-            className="bg-primary rounded-3xl p-6 md:p-8 flex flex-col justify-center items-center text-center relative overflow-hidden shadow-2xl shadow-primary/30"
+            initial={{ scale: 0.5, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ type: "spring", delay: 0.5 }}
+            className="flex flex-col items-center gap-3"
           >
-            <div className="absolute top-0 right-0 p-8 text-white opacity-10 leading-none">
-              <Wallet size={120} />
+            <div className="relative group leading-none">
+               <div className="absolute inset-0 bg-primary/20 blur-[40px] group-hover:bg-primary/40 transition-colors" />
+               <h3 className="text-4xl md:text-6xl font-black lowercase tracking-tighter relative z-10 text-white drop-shadow-2xl">
+                 kalibra<span className="text-primary font-bold">os</span>
+               </h3>
             </div>
-            <h3 className="text-lg md:text-xl font-bold uppercase text-white/80 tracking-widest mb-2 relative z-10">Total Investasi</h3>
-            <p className="text-4xl md:text-6xl font-black text-white italic tracking-tighter drop-shadow-xl relative z-10">
-              Rp 8.000.000
+            <p className="text-slate-400 font-bold uppercase tracking-[0.2em] md:tracking-[0.3em] text-[7px] md:text-[10px] bg-white/5 px-4 md:px-5 py-1 md:py-1 rounded-full border border-white/10 backdrop-blur-sm italic">
+              Premium IT Solution
             </p>
-            <div className="mt-6 px-4 py-2 bg-white/10 rounded-full border border-white/20 backdrop-blur-md relative z-10">
-              <p className="text-[10px] md:text-xs font-bold text-white/90 uppercase tracking-widest leading-none">Alokasi Dana PKM-K 2026</p>
+          </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1 }}
+            className="flex flex-col items-center gap-2 pt-4 border-t border-white/10 leading-none"
+          >
+            <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-slate-500 font-bold tracking-widest uppercase text-[7px] md:text-[9px] px-4 opacity-50">
+              <span className="whitespace-nowrap">Kalibra Systems</span>
+              <div className="w-0.5 h-0.5 rounded-full bg-slate-700 hidden md:block" />
+              <span className="whitespace-nowrap">2026 Edition</span>
             </div>
+            <Heart className="text-red-500/30 w-3.5 h-3.5 md:w-4 md:h-4 animate-pulse" fill="currentColor" />
           </motion.div>
         </div>
       </div>

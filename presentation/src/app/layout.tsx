@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Kalibra OS",
-  description: "SaaS-ERP Terintegrasi: Solusi Efisiensi Operasional UMKM F&B",
+  title: "Kalibra OS: SaaS-ERP Terintegrasi untuk Otomatisasi Stok & Akuntansi UMKM F&B",
+  description: "Solusi Manajemen Bisnis Modern untuk UMKM Food & Beverage",
 };
 
 export default function RootLayout({

@@ -3,7 +3,7 @@
 import React from 'react';
 import { SlideWrapper } from '../SlideWrapper';
 import { motion } from 'framer-motion';
-import { Target, TrendingUp, BarChart3, Rocket, ExternalLink } from 'lucide-react';
+import { ExternalLink, PlayCircle, Monitor, Smartphone, Globe } from 'lucide-react';
 
 interface SlideProps {
   isActive?: boolean;
@@ -13,79 +13,71 @@ interface SlideProps {
 export const Slide9: React.FC<SlideProps> = ({ isActive = false, direction = 0 }) => {
   return (
     <SlideWrapper isActive={isActive} direction={direction}>
-      <div className="space-y-4 md:space-y-8 w-full">
-        <div className="flex items-center gap-3 md:gap-4 pb-1 md:pb-2">
-           <div className="p-2 md:p-3 rounded-xl bg-secondary text-white shadow-xl shadow-secondary/40 leading-none">
-              <Rocket className="w-5 h-5 md:w-7 md:h-7" />
-           </div>
-           <h2 className="text-2xl md:text-4xl font-black text-white leading-tight uppercase tracking-tighter">Rencana Bisnis & Scaling</h2>
+      <div className="w-full max-w-5xl mx-auto space-y-8 md:space-y-12 text-center">
+        <div className="space-y-4">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={isActive ? { opacity: 1, scale: 1 } : {}}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 text-primary-foreground font-bold border border-primary/30 text-xs tracking-widest uppercase mb-2"
+          >
+            <PlayCircle size={16} className="fill-current" />
+            Live Demonstration
+          </motion.div>
+          <h2 className="text-3xl md:text-6xl font-black text-white uppercase tracking-tighter leading-tight italic">
+            Coba <span className="text-primary">Demo</span> Sekarang
+          </h2>
+          <p className="text-lg md:text-2xl text-slate-400 font-medium max-w-3xl mx-auto leading-relaxed">
+            Sistem kami telah siap dan dapat diakses melalui berbagai platform. Rasakan langsung efisiensi Kalibra OS.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6">
-           <div className="space-y-3 md:space-y-4">
-              <motion.div initial={{ x: -20, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.3 }} className="p-4 md:p-6 rounded-3xl md:rounded-[2rem] bg-slate-900/40 border border-white/10 shadow-2xl flex flex-col md:flex-row items-center md:items-start gap-3 md:gap-6 backdrop-blur-3xl relative overflow-hidden group text-center md:text-left leading-none">
-                 <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-5 pointer-events-none" />
-                 <div className="p-2 md:p-3 bg-primary/20 text-primary-foreground rounded-xl relative z-10 leading-none flex-shrink-0"><Target className="w-4 h-4 md:w-6 md:h-6" /></div>
-                 <div className="relative z-10">
-                    <h3 className="text-sm md:text-xl font-bold text-white mb-1 uppercase tracking-tighter leading-tight">Target Pasar</h3>
-                    <p className="text-[11px] md:text-sm text-slate-300 font-medium leading-relaxed max-w-xs mx-auto md:mx-0">Bisnis F&B level menengah (Kafe, Rumah Makan, Waralaba) yang butuh kontrol ketat.</p>
-                 </div>
-              </motion.div>
-
-              <motion.div initial={{ x: -20, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.5 }} className="p-4 md:p-6 rounded-3xl md:rounded-[2rem] bg-slate-900/40 border border-white/10 shadow-2xl flex flex-col md:flex-row items-center md:items-start gap-3 md:gap-6 backdrop-blur-3xl relative overflow-hidden group text-center md:text-left leading-none">
-                 <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-5 pointer-events-none" />
-                 <div className="p-2 md:p-3 bg-secondary/20 text-secondary-foreground rounded-xl relative z-10 leading-none flex-shrink-0"><TrendingUp className="w-4 h-4 md:w-6 md:h-6" /></div>
-                 <div className="relative z-10">
-                    <h3 className="text-sm md:text-xl font-bold text-white mb-1 uppercase tracking-tighter leading-tight">Model Bisnis</h3>
-                    <p className="text-[11px] md:text-sm text-slate-300 font-medium leading-relaxed max-w-xs mx-auto md:mx-0">Model Kerjasama Berlangganan bulanan atau tahunan dengan pilihan fitur yang fleksibel.</p>
-                 </div>
-              </motion.div>
-           </div>
-
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
            <motion.div 
-             initial={{ scale: 0.9, opacity: 0 }}
-             animate={{ scale: 1, opacity: 1 }}
-             transition={{ delay: 0.7 }}
-             className="bg-slate-900 rounded-2xl md:rounded-[2.5rem] p-4 md:p-8 text-white relative overflow-hidden shadow-2xl leading-none"
+             initial={{ y: 20, opacity: 0 }}
+             animate={isActive ? { y: 0, opacity: 1 } : {}}
+             transition={{ delay: 0.3 }}
+             className="p-8 rounded-[2.5rem] bg-slate-900/40 border border-white/10 backdrop-blur-3xl flex flex-col items-center gap-4 group hover:border-primary/50 transition-all"
            >
-              <div className="absolute top-0 right-0 p-4 md:p-6 text-primary opacity-20 hidden md:block leading-none">
-                <BarChart3 size={100} />
-              </div>
-              <div className="relative z-10 space-y-3 md:space-y-4">
-                 <h3 className="text-lg md:text-2xl font-black uppercase text-white italic tracking-tighter leading-tight">Visi Kedepan</h3>
-                 <p className="text-[11px] md:text-lg text-slate-400 leading-relaxed font-medium italic">
-                    "Menjadi standar sistem operasi digital yang paling tangguh dan mudah digunakan untuk Bisnis Food and Beverage di seluruh Indonesia."
-                 </p>
-                 <div className="pt-1.5 md:pt-4 grid grid-cols-2 gap-2 md:gap-3">
-                    <div className="p-2 md:p-3 bg-white/5 rounded-lg md:rounded-xl border border-white/10">
-                       <p className="text-[7px] text-slate-500 uppercase font-black mb-1">Expansion</p>
-                       <p className="text-xs md:text-lg font-bold">Island-wide</p>
-                    </div>
-                    <div className="p-2 md:p-3 bg-white/5 rounded-lg md:rounded-xl border border-white/10">
-                       <p className="text-[7px] text-slate-500 uppercase font-black mb-1">Users</p>
-                       <p className="text-xs md:text-lg font-bold">1000+ UMKM</p>
-                    </div>
-                 </div>
-
-                  <motion.div 
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 1.2 }}
-                    className="pt-3 md:pt-6 text-center"
-                  >
-                    <a 
-                      href="https://kalibra.vercel.app" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 md:gap-3 px-4 py-2 md:px-6 md:py-3 rounded-xl bg-primary text-white font-bold text-[10px] md:text-base hover:bg-primary/80 transition-all hover:scale-105 shadow-xl shadow-primary/20 group"
-                    >
-                      Coba Demo Sekarang
-                      <ExternalLink size={14} className="md:w-[18px] md:h-[18px] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                    </a>
-                  </motion.div>
-              </div>
+              <Monitor className="w-12 h-12 text-primary group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-bold uppercase tracking-tight">Desktop Web</h3>
+           </motion.div>
+           <motion.div 
+             initial={{ y: 20, opacity: 0 }}
+             animate={isActive ? { y: 0, opacity: 1 } : {}}
+             transition={{ delay: 0.5 }}
+             className="p-8 rounded-[2.5rem] bg-slate-900/40 border border-white/10 backdrop-blur-3xl flex flex-col items-center gap-4 group hover:border-primary/50 transition-all"
+           >
+              <Smartphone className="w-12 h-12 text-primary group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-bold uppercase tracking-tight">Mobile App</h3>
+           </motion.div>
+           <motion.div 
+             initial={{ y: 20, opacity: 0 }}
+             animate={isActive ? { y: 0, opacity: 1 } : {}}
+             transition={{ delay: 0.7 }}
+             className="p-8 rounded-[2.5rem] bg-slate-900/40 border border-white/10 backdrop-blur-3xl flex flex-col items-center gap-4 group hover:border-primary/50 transition-all"
+           >
+              <Globe className="w-12 h-12 text-primary group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-bold uppercase tracking-tight">Cloud Sync</h3>
            </motion.div>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isActive ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 1 }}
+          className="pt-4"
+        >
+          <a 
+            href="https://kalibra.vercel.app" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-4 px-8 py-4 md:px-12 md:py-6 rounded-2xl bg-primary text-white font-black text-lg md:text-2xl hover:bg-primary/90 transition-all hover:scale-105 shadow-[0_20px_50px_rgba(var(--primary),0.3)] group"
+          >
+            KUNJUNGI WEBSITE DEMO
+            <ExternalLink size={24} className="group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform" />
+          </a>
+          <p className="mt-6 text-slate-500 font-bold uppercase tracking-widest text-xs">kalibra.vercel.app</p>
+        </motion.div>
       </div>
     </SlideWrapper>
   );
