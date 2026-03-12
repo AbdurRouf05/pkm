@@ -27,27 +27,26 @@ export const Slide1: React.FC<SlideProps> = ({ isActive = false, direction = 0 }
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-xl md:text-5xl lg:text-5xl font-black text-white tracking-tight leading-[1.15] uppercase drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)] px-4"
+            className="text-4xl md:text-8xl lg:text-9xl font-black text-white tracking-tighter leading-none uppercase drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)] px-4 italic"
           >
-            INOVASI SAAS-ERP TERINTEGRASI: <br />
-            <span className="text-primary italic">Manajemen Stok & Akuntansi Otomatis</span> <br />
-            <span className="text-[0.45em] md:text-[0.55em] block mt-4 opacity-80 tracking-widest font-bold">Solusi Efisiensi Operasional UMKM F&B</span>
+            KALIBRA<span className="text-primary italic">OS</span>
           </motion.h1>
           
           <motion.div
             initial={{ width: 0 }}
-            animate={{ width: "120px" }}
+            animate={{ width: "200px" }}
             transition={{ duration: 1, delay: 0.8 }}
-            className="h-1 bg-primary mx-auto rounded-full shadow-[0_0_20px_rgba(var(--primary),0.5)]"
+            className="h-1.5 md:h-2 bg-primary mx-auto rounded-full shadow-[0_0_20px_rgba(var(--primary),0.5)] mt-4"
           />
 
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-base md:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed font-semibold italic drop-shadow-lg"
+            className="text-lg md:text-3xl text-slate-300 max-w-3xl mx-auto leading-relaxed font-black uppercase tracking-tighter italic drop-shadow-lg"
           >
-            Software as a Service-Enterprise Resource Planning Terintegrasi
+            SaaS-ERP Terintegrasi: <br />
+            <span className="text-white/60 text-sm md:text-xl tracking-widest font-bold not-italic">Solusi Efisiensi Operasional UMKM F&B</span>
           </motion.p>
           
           <motion.div 
